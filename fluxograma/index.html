@@ -71,14 +71,14 @@
       width: 100px;
     }
 
-    .arrow-down {
+    .arrow-down, .arrow-label {
       width: 2px;
       height: 30px;
       background-color: #555;
       position: relative;
     }
 
-    .arrow-down::after {
+    .arrow-down::after, .arrow-label::after {
       content: "";
       position: absolute;
       top: 30px;
@@ -108,9 +108,11 @@
       border-left: 10px solid #555;
     }
 
-    .side-group {
+    .side-group, .conditional {
       display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 60px;
       margin-bottom: 20px;
     }
 
@@ -121,6 +123,14 @@
       font-weight: bold;
       text-transform: uppercase;
     }
+
+    .label {
+      font-size: 14px;
+      font-weight: bold;
+      color: #34495e;
+      margin: -10px 0 10px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -130,7 +140,7 @@
     <div class="box">🏁 Início</div>
     <div class="arrow-down"></div>
 
-    <div class="box">📝 Análise de Requisitos</div>
+    <div class="box">🗘️ Análise de Requisitos</div>
     <div class="arrow-down"></div>
 
     <div class="double">
@@ -151,10 +161,15 @@
 
     <div class="diamond"><span>✅ Validação<br>do Cliente</span></div>
 
-    <div class="side-group">
-      <div class="box group">🔁 Revisar/Testar</div>
-      <div class="arrow-side"></div>
-      <div class="box success">🚀 Implementação</div>
+    <div class="conditional">
+      <div>
+        <div class="label">🔻 Não</div>
+        <div class="box group">🔁 Revisar/Testar</div>
+      </div>
+      <div>
+        <div class="label">🔻 Sim</div>
+        <div class="box success">🚀 Implementação</div>
+      </div>
     </div>
     <div class="arrow-down"></div>
 
@@ -169,7 +184,7 @@
     <div class="arrow-down"></div>
 
     <div class="fase">📞 Pós-venda</div>
-    <div class="box">🛠 Suporte Técnico</div>
+    <div class="box">🔧 Suporte Técnico</div>
     <div class="arrow-down"></div>
 
     <div class="box">🔄 Manutenção</div>
