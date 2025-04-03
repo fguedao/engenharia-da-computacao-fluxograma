@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fluxo Grama</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f8fb;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .fluxograma {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .box {
+      background-color: #d6eaf8;
+      border-left: 6px solid #3498db;
+      padding: 16px 24px;
+      border-radius: 10px;
+      width: 280px;
+      text-align: center;
+      font-weight: bold;
+      position: relative;
+      margin: 20px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .double {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+    }
+
+        .diamond {
+    width: 120px;
+    height: 120px;
+    background-color: #fadbd8;
+    transform: rotate(45deg);
+    position: relative;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .diamond span {
+    transform: rotate(-45deg);
+    text-align: center;
+    font-weight: bold;
+    width: 100px;
+    }
+
+
+    .arrow-down {
+      width: 2px;
+      height: 30px;
+      background-color: #555;
+      position: relative;
+    }
+
+    .arrow-down::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: -5px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 10px solid #555;
+    }
+
+    .arrow-side {
+      width: 40px;
+      height: 2px;
+      background-color: #555;
+      position: relative;
+      margin: auto 0;
+    }
+
+    .arrow-side::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 10px solid #555;
+    }
+
+    .side-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fluxograma Profissional com Setas</h1>
+  <div class="fluxograma">
+    <div class="box">Início</div>
+    <div class="arrow-down"></div>
+
+    <div class="box">Análise de Requisitos</div>
+    <div class="arrow-down"></div>
+
+    <div class="double">
+      <div class="box">UML</div>
+      <div class="box">Design</div>
+    </div>
+    <div class="arrow-down"></div>
+
+    <div class="box">Prototipação</div>
+    <div class="arrow-down"></div>
+
+    <div class="box">Desenvolvimento</div>
+    <div class="arrow-down"></div>
+
+    <div class="box">Testes</div>
+    <div class="arrow-down"></div>
+
+    <div class="diamond"><span>Validação do Cliente</span></div>
+
+    <div class="side-group">
+      <div class="box">Revisar</div>
+      <div class="arrow-side"></div>
+      <div class="box">Implementação</div>
+    </div>
+    <div class="arrow-down"></div>
+
+    <div class="box">Homologação</div>
+    <div class="arrow-down"></div>
+
+    <div class="double">
+      <div class="box">Treinamento</div>
+      <div class="box">Entrega</div>
+    </div>
+    <div class="arrow-down"></div>
+
+    <div class="box">Suporte Técnico</div>
+    <div class="arrow-down"></div>
+
+    <div class="box">Manutenção</div>
+  </div>
+</body>
+</html>
