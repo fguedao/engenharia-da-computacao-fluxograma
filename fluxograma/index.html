@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Fluxo Grama</title>
+  <title>Fluxograma com Decisões e Etapas Profissionais</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -36,31 +36,40 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
+    .box.success {
+      background-color: #d5f5e3;
+      border-left-color: #27ae60;
+    }
+
+    .box.group {
+      background-color: #f9e79f;
+      border-left-color: #f1c40f;
+    }
+
     .double {
       display: flex;
       justify-content: center;
       gap: 60px;
     }
 
-        .diamond {
-    width: 120px;
-    height: 120px;
-    background-color: #fadbd8;
-    transform: rotate(45deg);
-    position: relative;
-    margin: 40px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .diamond {
+      width: 120px;
+      height: 120px;
+      background-color: #fadbd8;
+      transform: rotate(45deg);
+      position: relative;
+      margin: 40px 0 -10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .diamond span {
-    transform: rotate(-45deg);
-    text-align: center;
-    font-weight: bold;
-    width: 100px;
+      transform: rotate(-45deg);
+      text-align: center;
+      font-weight: bold;
+      width: 100px;
     }
-
 
     .arrow-down {
       width: 2px;
@@ -104,11 +113,20 @@
       align-items: center;
       margin-bottom: 20px;
     }
+
+    .fase {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #7f8c8d;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
   </style>
 </head>
 <body>
-  <h1>Fluxograma Profissional com Setas</h1>
+  <h1>Fluxograma Profissional de Desenvolvimento de Software</h1>
   <div class="fluxograma">
+    <div class="fase">Planejamento</div>
     <div class="box">Início</div>
     <div class="arrow-down"></div>
 
@@ -116,11 +134,12 @@
     <div class="arrow-down"></div>
 
     <div class="double">
-      <div class="box">UML</div>
-      <div class="box">Design</div>
+      <div class="box group">UML</div>
+      <div class="box group">Design</div>
     </div>
     <div class="arrow-down"></div>
 
+    <div class="fase">Criação</div>
     <div class="box">Prototipação</div>
     <div class="arrow-down"></div>
 
@@ -133,12 +152,13 @@
     <div class="diamond"><span>Validação do Cliente</span></div>
 
     <div class="side-group">
-      <div class="box">Revisar</div>
+      <div class="box group">Revisar/Testar</div>
       <div class="arrow-side"></div>
-      <div class="box">Implementação</div>
+      <div class="box success">Implementação</div>
     </div>
     <div class="arrow-down"></div>
 
+    <div class="fase">Entrega</div>
     <div class="box">Homologação</div>
     <div class="arrow-down"></div>
 
@@ -148,6 +168,7 @@
     </div>
     <div class="arrow-down"></div>
 
+    <div class="fase">Pós-venda</div>
     <div class="box">Suporte Técnico</div>
     <div class="arrow-down"></div>
 
