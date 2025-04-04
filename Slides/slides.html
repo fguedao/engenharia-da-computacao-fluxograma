@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apresentação Metodologias de Software</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom right, #ecf0f1, #d0e6f7);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .slides-container {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .slide {
+      min-width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 44px;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 22px;
+      color: #34495e;
+      max-width: 900px;
+      white-space: pre-line;
+      line-height: 1.6;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .nav button {
+      background-color: #2980b9;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      margin: 0 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .nav button:hover {
+      background-color: #1c5d8c;
+    }
+  </style>
+</head>
+<body>
+  <div class="slides-container" id="slides">
+    <div class="slide">
+      <h1>📊 Introdução</h1>
+      <p>Apresentar 10 metodologias de desenvolvimento de software, suas características e aplicações.</p>
+    </div>
+    <div class="slide">
+      <h1>🌀 SCRUM</h1>
+      <p>• Baseado em sprints e papéis como Scrum Master e Product Owner.
+• Reuniões: daily, planning, review e retrospectiva.
+• Ideal para projetos dinâmicos.</p>
+    </div>
+    <div class="slide">
+      <h1>⚙️ LEAN</h1>
+      <p>• Foco em eliminar desperdícios e maximizar valor.
+• Melhoria contínua e decisões baseadas em dados.
+• Usado em startups e times enxutos.</p>
+    </div>
+    <div class="slide">
+      <h1>📊 KANBAN</h1>
+      <p>• Visualização do fluxo de trabalho com quadros.
+• Limita o WIP (trabalho em andamento).
+• Facilita entregas contínuas.</p>
+    </div>
+    <div class="slide">
+      <h1>💻 XP</h1>
+      <p>• Qualidade do código e feedback rápido.
+• Práticas: programação em par, TDD, integração contínua.
+• Cliente participa ativamente.</p>
+    </div>
+    <div class="slide">
+      <h1>🧩 FDD</h1>
+      <p>• Desenvolvimento orientado por funcionalidades.
+• Etapas: modelagem, planejamento, construção por feature.
+• Ideal para equipes grandes.</p>
+    </div>
+    <div class="slide">
+      <h1>⚡ RAD</h1>
+      <p>• Entregas rápidas com uso de protótipos.
+• Feedback contínuo do cliente.
+• Útil quando há urgência.</p>
+    </div>
+    <div class="slide">
+      <h1>🌀 ESPIRAL</h1>
+      <p>• Evolução do projeto em espirais.
+• Combina desenvolvimento incremental e análise de riscos.
+• Ideal para sistemas críticos.</p>
+    </div>
+    <div class="slide">
+      <h1>🔧 PROTOTIPAÇÃO</h1>
+      <p>• Criação de versões preliminares para validação.
+• Envolve o cliente antes da versão final.
+• Reduz falhas de comunicação.</p>
+    </div>
+    <div class="slide">
+      <h1>✔️ MODELO V</h1>
+      <p>• Validação e testes paralelos ao desenvolvimento.
+• Cada fase tem sua verificação correspondente.
+• Usado em sistemas críticos.</p>
+    </div>
+    <div class="slide">
+      <h1>➕ INCREMENTAL</h1>
+      <p>• Construção do sistema por partes funcionais.
+• Entregas contínuas e evolutivas.
+• Cliente vê valor desde o início.</p>
+    </div>
+    <div class="slide">
+      <h1>📘 RUP</h1>
+      <p>• Processo iterativo da IBM.
+• Fases: Iniciação, Elaboração, Construção e Transição.
+• Usado em projetos grandes.</p>
+    </div>
+    <div class="slide">
+      <h1>✅ Conclusão</h1>
+      <p>• Cada metodologia tem seu contexto ideal.
+• Abordagens ágeis dominam o mercado.
+• Combinações são comuns para adaptar à realidade.</p>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button onclick="prevSlide()">⬅ Anterior</button>
+    <button onclick="nextSlide()">Próximo ➡</button>
+  </div>
+
+  <script>
+    let current = 0;
+    const slides = document.getElementById("slides");
+    const total = document.querySelectorAll(".slide").length;
+
+    function updateSlide() {
+      slides.style.transform = `translateX(-${current * 100}vw)`;
+    }
+
+    function nextSlide() {
+      if (current < total - 1) {
+        current++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (current > 0) {
+        current--;
+        updateSlide();
+      }
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    });
+
+    window.onload = updateSlide;
+  </script>
+</body>
+</html>
